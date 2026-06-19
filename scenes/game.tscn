@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bfhmev8phoae3" path="res://scenes/maze_map.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dtpksqljcnd38" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="AudioStream" uid="uid://ba2vl3gtdn07" path="res://sounds/horror_sound.mp3" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://b6ylrcicsx6jq" path="res://scenes/screen_texts.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" path="res://scenes/screen_texts.tscn" id="5_iywne"]
 [ext_resource type="AudioStream" uid="uid://cpl2tm0yk6683" path="res://sounds/lightswitch_off.mp3" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://cr7gbr8p8mdxn" path="res://sounds/lightswitch_on.mp3" id="7_u5sy4"]
 
