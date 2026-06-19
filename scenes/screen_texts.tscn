@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ylrcicsx6jq"]
+
+[ext_resource type="Script" uid="uid://c210a7ukivhof" path="res://scenes/screen_texts.gd" id="1_i568l"]
+[ext_resource type="FontFile" uid="uid://ckuwm3n5tkw7u" path="res://fonts/PixelOperator.ttf" id="2_fmkxf"]
+
+[node name="ScreenTexts" type="CanvasLayer"]
+script = ExtResource("1_i568l")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 19.0
+offset_right = 66.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("2_fmkxf")
+theme_override_font_sizes/font_size = 32
