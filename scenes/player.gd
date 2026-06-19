@@ -4,7 +4,7 @@ const SPEED = 50
 @onready var switch_off: AudioStreamPlayer = $"../Switch_Off"
 @onready var switch_on: AudioStreamPlayer = $"../Switch_On"
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector("left","right","up","down")
 	velocity=direction*SPEED
 	if Input.is_action_just_pressed("light_toggle"):
