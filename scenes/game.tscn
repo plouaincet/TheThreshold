@@ -1,12 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcseent1yvlfo"]
+[gd_scene load_steps=5 format=3 uid="uid://bcseent1yvlfo"]
 
 [ext_resource type="Script" uid="uid://00pov1jjtbc2" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bfhmev8phoae3" path="res://scenes/maze_map.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dtpksqljcnd38" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="AudioStream" uid="uid://ba2vl3gtdn07" path="res://sounds/horror_sound.mp3" id="4_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://b6ylrcicsx6jq" path="res://scenes/screen_texts.tscn" id="5_iywne"]
-[ext_resource type="AudioStream" uid="uid://cpl2tm0yk6683" path="res://sounds/lightswitch_off.mp3" id="6_p57ef"]
-[ext_resource type="AudioStream" uid="uid://cr7gbr8p8mdxn" path="res://sounds/lightswitch_on.mp3" id="7_u5sy4"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_lnu2h")
@@ -30,19 +27,7 @@ limit_bottom = 32
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Horror_sound" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_lbhrr")
 volume_db = 1.0
 max_polyphony = 2
-
-[node name="ScreenTexts" parent="." instance=ExtResource("5_iywne")]
-
-[node name="Switch_Off" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_p57ef")
-volume_db = -10.0
-pitch_scale = 0.7
-
-[node name="Switch_On" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_u5sy4")
-volume_db = -10.0
-pitch_scale = 0.8
