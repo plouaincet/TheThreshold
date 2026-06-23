@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 50
+var SPEED = 25
 @onready var switch_off: AudioStreamPlayer = $"../Switch_Off"
 @onready var switch_on: AudioStreamPlayer = $"../Switch_On"
 

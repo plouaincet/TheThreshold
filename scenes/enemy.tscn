@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq42x6i4767le"]
+
+[ext_resource type="Texture2D" uid="uid://bp3tbb0586xdx" path="res://icon.svg" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://dch5v47lgj33s" path="res://scenes/enemy.gd" id="1_md0e3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 4.0
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_md0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.071875006, 0.103125006)
+texture = ExtResource("1_7p1mj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_md0e3")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 3.0
+target_desired_distance = 3.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcseent1yvlfo"]
+[gd_scene load_steps=10 format=3 uid="uid://bcseent1yvlfo"]
 
 [ext_resource type="Script" uid="uid://00pov1jjtbc2" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bfhmev8phoae3" path="res://scenes/maze_map.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://dtpksqljcnd38" path="res://scenes/player.tscn" id="2_yqjtg"]
 [ext_resource type="AudioStream" uid="uid://ba2vl3gtdn07" path="res://sounds/horror_sound.mp3" id="4_lbhrr"]
-[ext_resource type="PackedScene" path="res://scenes/screen_texts.tscn" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://b6ylrcicsx6jq" path="res://scenes/screen_texts.tscn" id="5_iywne"]
 [ext_resource type="AudioStream" uid="uid://cpl2tm0yk6683" path="res://sounds/lightswitch_off.mp3" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://cr7gbr8p8mdxn" path="res://sounds/lightswitch_on.mp3" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dq42x6i4767le" path="res://scenes/enemy.tscn" id="8_gee14"]
+[ext_resource type="AudioStream" uid="uid://4k1smt62th47" path="res://sounds/static.mp3" id="9_0tnpc"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_lnu2h")
@@ -46,3 +48,17 @@ pitch_scale = 0.7
 stream = ExtResource("7_u5sy4")
 volume_db = -10.0
 pitch_scale = 0.8
+
+[node name="Enemy" parent="." instance=ExtResource("8_gee14")]
+position = Vector2(472, -570)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemy"]
+
+[node name="Static" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_0tnpc")
+volume_db = -15.0
+pitch_scale = 0.7
+parameters/looping = true
+
+[connection signal="screen_entered" from="Enemy/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="Enemy/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
