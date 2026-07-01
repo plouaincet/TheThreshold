@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcseent1yvlfo"]
+[gd_scene format=3 uid="uid://bcseent1yvlfo"]
 
 [ext_resource type="Script" uid="uid://00pov1jjtbc2" path="res://scenes/game.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://bfhmev8phoae3" path="res://scenes/maze_map.tscn" id="1_uwrxv"]
@@ -10,20 +10,21 @@
 [ext_resource type="PackedScene" uid="uid://dq42x6i4767le" path="res://scenes/enemy.tscn" id="8_gee14"]
 [ext_resource type="AudioStream" uid="uid://4k1smt62th47" path="res://sounds/static.mp3" id="9_0tnpc"]
 
-[node name="Game" type="Node"]
+[node name="Game" type="Node" unique_id=1702999846]
 script = ExtResource("1_lnu2h")
 
-[node name="MazeMap" parent="." instance=ExtResource("1_uwrxv")]
+[node name="MazeMap" parent="." unique_id=873651638 instance=ExtResource("1_uwrxv")]
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=2098350597]
+visible = false
 energy = 0.92
 blend_mode = 1
 range_z_max = 0
 
-[node name="player" parent="." instance=ExtResource("2_yqjtg")]
+[node name="player" parent="." unique_id=254186001 instance=ExtResource("2_yqjtg")]
 z_index = 0
 
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=641204448]
 zoom = Vector2(10, 10)
 limit_left = -344
 limit_top = -896
@@ -32,33 +33,36 @@ limit_bottom = 32
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Horror_sound" type="AudioStreamPlayer2D" parent="."]
+[node name="Horror_sound" type="AudioStreamPlayer2D" parent="." unique_id=975515854]
 stream = ExtResource("4_lbhrr")
 volume_db = 1.0
 max_polyphony = 2
 
-[node name="ScreenTexts" parent="." instance=ExtResource("5_iywne")]
+[node name="ScreenTexts" parent="." unique_id=1320154833 instance=ExtResource("5_iywne")]
 
-[node name="Switch_Off" type="AudioStreamPlayer" parent="."]
+[node name="Switch_Off" type="AudioStreamPlayer" parent="." unique_id=493938876]
 stream = ExtResource("6_p57ef")
 volume_db = -10.0
 pitch_scale = 0.7
 
-[node name="Switch_On" type="AudioStreamPlayer" parent="."]
+[node name="Switch_On" type="AudioStreamPlayer" parent="." unique_id=781780251]
 stream = ExtResource("7_u5sy4")
 volume_db = -10.0
 pitch_scale = 0.8
 
-[node name="Enemy" parent="." instance=ExtResource("8_gee14")]
+[node name="Enemy" parent="." unique_id=1716809677 instance=ExtResource("8_gee14")]
 position = Vector2(472, -570)
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemy"]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Enemy" unique_id=494123735]
 
-[node name="Static" type="AudioStreamPlayer2D" parent="."]
+[node name="Static" type="AudioStreamPlayer2D" parent="." unique_id=1690435051]
 stream = ExtResource("9_0tnpc")
 volume_db = -15.0
 pitch_scale = 0.7
 parameters/looping = true
+
+[node name="Enemy2" parent="." unique_id=986122777 instance=ExtResource("8_gee14")]
+position = Vector2(-178, -647)
 
 [connection signal="screen_entered" from="Enemy/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="Enemy/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
