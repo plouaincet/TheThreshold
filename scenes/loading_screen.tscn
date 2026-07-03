@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://1y24hdge5f5"]
+
+[ext_resource type="FontFile" uid="uid://ckuwm3n5tkw7u" path="res://fonts/PixelOperator.ttf" id="1_ep5rh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3owqy"]
+
+[node name="LoadingScreen" type="Node" unique_id=252586531]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2028038777]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=282512552]
+modulate = Color(0.08304135, 0.00014397412, 0.05122578, 1)
+position = Vector2(320.5, 179.5)
+scale = Vector2(641, 359)
+texture = SubResource("CanvasTexture_3owqy")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1642291950]
+offset_right = 640.0
+offset_bottom = 362.0
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ep5rh")
+theme_override_font_sizes/font_size = 32
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
