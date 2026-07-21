@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bn7eju456txec" path="res://sprites/light.png" id="1_l0vbx"]
 [ext_resource type="Texture2D" uid="uid://cram0lgtihcag" path="res://sprites/nolight.png" id="2_0g0qd"]
 [ext_resource type="Texture2D" uid="uid://b134v2gf8vksd" path="res://sprites/fuckinharrow.png" id="4_gxvq4"]
+[ext_resource type="AudioStream" uid="uid://b66cx5xdyq7av" path="res://sounds/startscreen.mp3" id="5_l1ni3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8upip"]
 animations = [{
@@ -149,6 +150,10 @@ texture = ExtResource("4_gxvq4")
 position = Vector2(501, 260)
 texture = ExtResource("4_gxvq4")
 flip_h = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1447046595]
+stream = ExtResource("5_l1ni3")
+autoplay = true
 
 [connection signal="button_down" from="StartGameArea/Startgame" to="." method="_on_startgame_button_down"]
 [connection signal="mouse_entered" from="StartGameArea/Startgame" to="." method="_on_startgame_mouse_entered"]
